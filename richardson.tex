@@ -1,0 +1,57 @@
+\begin{frame}
+    \frametitle{Extrapolación de Richardson}
+
+    Suponga que $\forall h\neq0$ tenemos una fórmula $N_{1}\left(h\right)$
+    que aproxima un valor desconocido $M$
+    \begin{equation*}
+        M-
+        N_{1}\left(h\right)=
+        K_{1}h+
+        K_{2}h^{2}+
+        K_{3}h^{3}+
+        \cdots
+    \end{equation*}
+    existen
+    \begin{math}
+        \left\{
+        K_{1},
+        K_{2},
+        K_{3},
+        \dotsc
+        \right\}\subset
+        \mathbb{R}
+    \end{math}.
+    Si $K_{1}\neq0$, entonces el \emph{error de truncamiento} es
+    $\mathcal{O}\left(h\right)$.
+
+    \
+
+    \begin{example}
+        \begin{align*}
+            f^{\prime}\left(x\right)-
+            \dfrac{f\left(x+h\right)-f\left(x\right)}{h}    & =
+            -\dfrac{f^{\left(2\right)}\left(x\right)}{2!}h
+            -\dfrac{f^{\left(3\right)}\left(x\right)}{3!}h^{2}
+            -\dfrac{f^{\left(4\right)}\left(x\right)}{4!}h^{3}
+            -\cdots.                                            \\
+            f^{\prime}\left(x\right)-
+            \dfrac{f\left(x+h\right)-f\left(x-h\right)}{2h} & =
+            -\dfrac{f^{\left(3\right)}\left(x\right)}{3!}h^{2}
+            -\dfrac{f^{\left(5\right)}\left(x\right)}{5!}h^{4}
+            -\dfrac{f^{\left(7\right)}\left(x\right)}{7!}h^{6}
+            -\cdots.
+            \shortintertext{En general,}
+            f^{\prime}\left(x\right)-
+            N_{j}\left(h\right)                             & =
+            \mathcal{O}\left(h^{2j}\right),
+            \shortintertext{donde}
+            N_{j}\left(h\right)                             & =
+            N_{j-1}\left(\dfrac{h}{2}\right)+
+            \dfrac{
+            N_{j-1}\left(\frac{h}{2}\right)-N_{j-1}\left(h\right)
+            }{
+            4^{j-1}-1
+            }.
+        \end{align*}
+    \end{example}
+\end{frame}
