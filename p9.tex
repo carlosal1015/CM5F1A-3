@@ -7,9 +7,9 @@
               Determine los valores de $n$ y $h$ que se requiere para
               aproximar
               \begin{math}
+                  \displaystyle
                   \int\limits_{0}^{4}
-                  \dfrac{1}{x+4}
-                  \dl x
+                  \dfrac{\dl x}{x+4}
               \end{math}
               con una exactitud de $10^{-5}$ y calcule la
               aproximación aplicando
@@ -30,7 +30,12 @@
     \end{enumerate}
 
     \begin{solution}
-        Hallando las primera cuatro derivadas
+        Sean $a=0$, $b=4$, $h=\dfrac{b-a}{n}$ y
+        \begin{math}
+            f\left(x\right)=
+            \dfrac{1}{x+4}
+        \end{math}.
+        Sus primeras cuatro derivadas son
 
         \begin{align*}
             f^{\left(1\right)}\left(x\right) &

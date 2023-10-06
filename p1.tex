@@ -6,8 +6,9 @@
     \begin{enumerate}\setcounter{enumi}{0}
         \item
 
-              Suponga que $N\left(h\right)$ es una \emph{aproximación}
-              de $M$ y que para cualquier tamaño de paso $h>0$
+              Suponga que $N\left(h\right)$ es una
+              \emph{aproximación} de $M$ y que para cualquier tamaño
+              de paso $h>0$
               \begin{equation}\label{eq:richardson}
                   M=
                   N\left(h\right)+
@@ -49,20 +50,20 @@
             K_{1}\alert{h}+
             K_{2}\alert{h^{2}}+
             K_{3}\alert{h^{3}}+
-            \cdots
+            \cdots.
             \\
             M & =
             N\left(\alert{\dfrac{h}{3}}\right)+
             K_{1}\alert{\dfrac{h}{3}}+
             K_{2}\alert{\dfrac{h^{2}}{9}}+
             K_{3}\alert{\dfrac{h^{3}}{27}}+
-            \cdots \\
+            \cdots. \\
             M & =
             N\left(\alert{\dfrac{h}{9}}\right)+
             K_{1}\alert{\dfrac{h}{9}}+
             K_{2}\alert{\dfrac{h^{2}}{81}}+
             K_{3}\alert{\dfrac{h^{3}}{729}}+
-            \cdots
+            \cdots.
         \end{align*}
         Multiplicamos la primera ecuación por $\alert{A}$, la segunda
         por $\alert{B}$, y la tercera por $\alert{C}$.
@@ -72,27 +73,29 @@
             \alert{A}K_{1}h+
             \alert{A}K_{2}h^{2}+
             \alert{A}K_{3}h^{3}+
-            \cdots
+            \cdots.
             \\
             \alert{B}M & =
             \alert{B}N\left(\dfrac{h}{3}\right)+
             \alert{B}K_{1}\dfrac{h}{3}+
             \alert{B}K_{2}\dfrac{h^{2}}{9}+
             \alert{B}K_{3}\dfrac{h^{3}}{27}+
-            \cdots         \\
+            \cdots.        \\
             \alert{C}M & =
             \alert{C}N\left(\dfrac{h}{9}\right)+
             \alert{C}K_{1}\dfrac{h}{9}+
             \alert{C}K_{2}\dfrac{h^{2}}{81}+
             \alert{C}K_{3}\dfrac{h^{3}}{729}+
-            \cdots
+            \cdots.
         \end{align*}
     \end{solution}
 \end{frame}
 
 \begin{frame}
     \begin{solution}
-        Sumando y cancelando $K_{1}$ y $K_{2}$ resulta las ecuaciones
+        Sumando las tres ecuaciones y cancelando $K_{1}$ y $K_{2}$
+        resulta las ecuaciones
+
         \begin{align*}
             A+\dfrac{B}{3}+\dfrac{C}{9}  & =0. \\
             A+\dfrac{B}{9}+\dfrac{C}{81} & =0.
@@ -103,17 +106,29 @@
             \shortintertext{Multiplicando por $81$}
             18B+
             8C                           & =
-            0.                                 \\
+            0.
+            \shortintertext{Simplificando}
             9B+
             4C                           & =
             0.
-            \shortintertext{Haciendo $C=0$, $B=1$ y $A=-9$. Por lo tanto,}
+            \shortintertext{
+                Haciendo $C=0$, $B=1$ y $A=-9$.
+                Por lo tanto,}
             \left(\alert{A}+\alert{B}+\alert{C}\right)
             M                            & =
             \alert{A}N\left(h\right)+
             \alert{B}N\left(\dfrac{h}{3}\right)+
             \alert{C}N\left(\dfrac{h}{9}\right)+
-            \mathcal{O}\left(h^{3}\right)
+            \mathcal{O}\left(h^{3}\right).     \\
+            \alert{-8}M                  & =
+            \alert{-9}N\left(h\right)+
+            N\left(\dfrac{h}{3}\right)+
+            \alert{0}N\left(\dfrac{h}{9}\right)+
+            \mathcal{O}\left(h^{3}\right).     \\
+            M                            & =
+            \dfrac{9}{8}N\left(h\right)
+            -\dfrac{1}{8}N\left(\dfrac{h}{3}\right)+
+            \mathcal{O}\left(h^{3}\right).
         \end{align*}
         % El término principal de la serie de errores, $K_{2}h^{2}$, se puede eliminar entre las ecuaciones
     \end{solution}
