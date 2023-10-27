@@ -1,0 +1,46 @@
+\section{Pregunta N$^{\circ}$6\qquad León Alonzo Terrones Caccha}
+
+\begin{frame}
+    \begin{enumerate}\setcounter{enumi}{5}
+        \item
+
+               Encuentre las constantes $c_0$, $c_1$ y $x_1$ de modo que la fórmula de cuadratura
+              \begin{math}
+                  \displaystyle
+                  \int\limits_{0}^{1}
+                  f(x)=c_0f(0)+c_1f(x_1)
+              \end{math}
+              tenga el grado de precisión más alto posible.
+
+            
+    \end{enumerate}
+
+    \begin{solution}
+        Sea $f$ constante de valor $K$. Entonces
+        \begin{align*}
+        \displaystyle\int\limits_{0}^{1}f(x)\,dx&=K=c_0K+c_1K
+        \end{align*}
+   Por tanto 
+   \begin{equation}\label{1}
+       c_0K+c_1=1
+   \end{equation}
+        Para $f(x)=ax+b$, i.e. una función lineal:
+        \begin{align*}
+        \displaystyle\int\limits_{0}^{1}f(x)\,dx&=\displaystyle\int\limits_{0}^{1}ax+b\,dx=\frac{a}{2}+b=c_0f(0)+c_1f(x_1)=c_0b+c_1(ax_1+b)\underbrace{=}_{\ref{1}}ac_1x_1+b
+        \end{align*}
+        Por tanto se tiene
+        \begin{equation*}
+            c_1=\frac{1}{2x_1}
+        \end{equation*}
+        y 
+        \begin{equation*}
+            c_0=1-\frac{1}{2x_1}
+        \end{equation*}
+        para cualquier $x_1\in [0,1]$.
+
+        
+    \end{solution}
+\end{frame}
+
+
+
